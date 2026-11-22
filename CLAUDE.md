@@ -16,7 +16,14 @@ Python + GitHub Actions (agendamento diário) + Google Sheets (conta de serviço
 
 Etapas: buscar → completar dados → pontuar com IA → remover repetidos → gravar na planilha.
 
-Fontes previstas: Google Places API (cota gratuita), dados abertos do CNPJ / BrasilAPI (CNAE 6920-6/01, atividades de contabilidade), site da própria empresa.
+Fontes em uso: Minha Receita (busca por UF + município IBGE + `cnae_fiscal=6920601`, paginada por `cursor`; limite de ~1 busca pesada/minuto, responde 429) e CNPJ.ws pública (e-mail e telefones; 3 consultas/minuto). Ambas bloqueiam o User-Agent padrão do Python: usar `agente-lead/0.1`.
+
+## Comandos
+
+- Testes: `python -m pytest -q` (sem internet)
+- Teste real sem gravar: `python -m agente_lead --teste --limite 3`
+- Gravar em CSV: `python -m agente_lead --csv leads.csv`
+- Agendamento: `.github/workflows/prospectar.yml` (seg–sex 11:23 UTC). Segredos: `PLANILHA_ID`, `GOOGLE_SERVICE_ACCOUNT_JSON`, `ANTHROPIC_API_KEY` (opcional).
 
 ## Regras
 

@@ -1,0 +1,23 @@
+# Configurações do agente (nada aqui é segredo).
+# Chaves e senhas ficam nos "Secrets" do GitHub, nunca neste arquivo.
+
+[busca]
+uf = "TO"
+# CNAE 6920-6/01: Atividades de contabilidade
+cnae = "6920601"
+# Cidades buscadas primeiro, pelo código do IBGE. 1702109 = Araguaína.
+# Depois que acabarem os contadores dessas cidades, o agente busca no estado todo.
+cidades_prioritarias_ibge = ["1702109"]
+leads_por_dia = 10
+
+[mensagem]
+# Usado para montar a mensagem sugerida de primeira abordagem.
+seu_nome = ""
+produto = "uma ferramenta de cálculo para contadores"
+# Uma frase com o principal benefício. Ex.: "faz em segundos os cálculos de X que hoje tomam horas na planilha"
+beneficio = ""
+convite = "Posso te mostrar em 10 minutos como funciona?"
+
+[ia]
+# Só é usado se o secret ANTHROPIC_API_KEY existir. Sem ele, a mensagem sai de um modelo de texto (grátis).
+modelo = "claude-opus-5-5"
