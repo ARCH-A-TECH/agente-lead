@@ -14,7 +14,7 @@ Agente que prospecta leads automaticamente e grava os dados em uma planilha do G
 
 Python + GitHub Actions (agendamento diário) + Google Sheets (conta de serviço), priorizando ferramentas gratuitas.
 
-Etapas: buscar → completar dados → pontuar com IA → remover repetidos → gravar na planilha.
+Etapas: buscar → remover repetidos → pontuar (regras fixas) → completar contato → mensagem (modelo de texto ou Claude, opcional) → gravar na planilha.
 
 Fontes em uso: Minha Receita (busca por UF + município IBGE + `cnae_fiscal=6920601`, paginada por `cursor`; limite de ~1 busca pesada/minuto, responde 429) e CNPJ.ws pública (e-mail e telefones; 3 consultas/minuto). Ambas bloqueiam o User-Agent padrão do Python: usar `agente-lead/0.1`.
 
