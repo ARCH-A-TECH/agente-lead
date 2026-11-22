@@ -12,12 +12,9 @@ leads_por_dia = 10
 
 [mensagem]
 # Usado para montar a mensagem sugerida de primeira abordagem.
-seu_nome = ""
-produto = "uma ferramenta de cálculo para contadores"
+seu_nome = "Arquipo"
+produto = "uma ferramenta que analisa a carteira de clientes do Simples e mostra quem deve ir para o regime híbrido"
 # Uma frase com o principal benefício. Ex.: "faz em segundos os cálculos de X que hoje tomam horas na planilha"
-beneficio = ""
+beneficio = "lê os XMLs de venda e indica, cliente por cliente, se vale recolher IBS/CBS por fora na janela de março, sem montar planilha"
 convite = "Posso te mostrar em 10 minutos como funciona?"
 
-[ia]
-# Só é usado se o secret ANTHROPIC_API_KEY existir. Sem ele, a mensagem sai de um modelo de texto (grátis).
-modelo = "claude-opus-5-5"
